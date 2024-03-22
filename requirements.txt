@@ -1,3 +1,5 @@
 openai
 streamlit
 Flask
+openai>=0.13.0
+
