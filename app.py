@@ -1,3 +1,4 @@
+
 import streamlit as st
 import os
 from openai import OpenAI
@@ -33,4 +34,5 @@ user_input = st.text_input("You:", "Type here...")
 if st.button("Submit"):
     response = agricultural_chatbot(user_input)
     st.text_area("Chatbot:", value=response, height=200)
+
 
