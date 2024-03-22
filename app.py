@@ -1,10 +1,13 @@
-
 import streamlit as st
 import os
 from openai import OpenAI
 
-# Set your OpenAI API key using an environment variable
-os.environ["OPENAI_API_KEY"] = "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"
+# Read the API key from the text file
+with open("api_key.txt", "r") as file:
+    OPENAI_API_KEY = file.read().strip()
+
+# Set the OpenAI API key as an environment variable
+os.environ["OPENAI_API_KEY"] = OPENAI_API_KEY
 
 # Initialize the OpenAI client
 client = OpenAI()
@@ -34,5 +37,3 @@ user_input = st.text_input("You:", "Type here...")
 if st.button("Submit"):
     response = agricultural_chatbot(user_input)
     st.text_area("Chatbot:", value=response, height=200)
-
-
